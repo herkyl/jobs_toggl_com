@@ -118,13 +118,14 @@ $(function() {
             this.handleDocumentKeyup = $.proxy(this.handleDocumentKeyup, this);
             this.handleResize = $.proxy(this.handleResize, this);
             this.handleModalCloseClick = $.proxy(this.handleModalCloseClick, this);
+            this.handleOverlayClick = $.proxy(this.handleOverlayClick, this);
             
             this.$_container = $('<div />').addClass('overlay');
 
             if (this.settings.zIndex) { this.$_container.css('z-index', this.settings.zIndex); }
             
             if ($.browser.msie) { this.$_container.append('<iframe class="overlay-iframe" src="javascript:false" frameborder="0"></iframe>'); }
-            this.$_container.append('<div class="overlay-content"></div>');
+            this.$_container.append('<div class="overlay-content"><a href="" class="modal-close">&times;</a></div>');
             this.$_container.on('click', '.modal-close', this.handleModalCloseClick);
             this.$_content = this.$_container.children('.overlay-content');
             this.$_content.append('<div class="overlay-popup"></div>');
@@ -148,6 +149,10 @@ $(function() {
         
         handleModalCloseClick: function(e) {
             e.preventDefault();
+            this.hide();
+        },
+        
+        handleOverlayClick: function() {
             this.hide();
         },
         
@@ -210,6 +215,7 @@ $(function() {
             $(window).on('resize', this.handleResize);
             $(window).on('orientationchange', this.handleResize);
             $(document).on('keyup', this.handleDocumentKeyup);
+            this.$_container.on('click', this.handleOverlayClick);
             this.$_content.css('visibility','visible');
         },
         
@@ -221,6 +227,7 @@ $(function() {
             $(window).off('resize', this.handleResize);
             $(window).off('orientationchange', this.handleResize);
             $(document).off('keyup', this.handleDocumentKeyup);
+            this.$_container.off('click', this.handleOverlayClick);
             $(window).scrollTop(this.scrollTop);
         },
         

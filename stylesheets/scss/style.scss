@@ -160,7 +160,12 @@ p { margin: 0 0 28px 0; padding: 0; }
     font: 13px/1 'clearsans_medium', sans-serif; text-transform: uppercase;
     padding: 20px 0; letter-spacing: 3px;
     transition: background 0.05s ease-in, color 0.05s ease-in;
-    &:after { content: " ›"; vertical-align: 1px;}
+    &:before {
+      content: url('../images/down_arr_white.png'); display: none;
+    }
+    &:after { 
+      content: " ›"; vertical-align: 1px;
+    }
     
     &:hover {
       transition: background 0.05s ease-in, color 0.05s ease-in;
@@ -207,6 +212,12 @@ p { margin: 0 0 28px 0; padding: 0; }
   }
 
 /* wrap */
+  
+  #wrap {
+    .overlay-open & {
+      position: fixed; left: 0; top: 0; width: 100%;
+    }
+  }
   .wrap {
     margin: 0 auto; width: 970px; text-align: left;
   }
@@ -214,10 +225,6 @@ p { margin: 0 0 28px 0; padding: 0; }
 /* main */
   #main {
     background: url('../images/map.png') no-repeat center bottom; position: relative; z-index: 100;
-    
-    .overlay-open & {
-      position: fixed; left: 0; top: 0; width: 100%;
-    }
   }
   
   #logo { 
@@ -251,6 +258,23 @@ p { margin: 0 0 28px 0; padding: 0; }
     .content { 
       display: table-cell; padding: 45px; height: 485px; 
       @include box-sizing(border-box); vertical-align: middle;
+    }
+  }
+
+/* link-box */
+  .link-box {
+    padding-top: 30px;
+    .inner { background: white; padding: 25px 40px; color: $second-color; }
+    .left { float: left; font-size: 30px;   }
+    .right { 
+      float: right; letter-spacing: 3px; padding-top: 18px;
+      font: 13px/1 'clearsans_medium', sans-serif; text-transform: uppercase;
+      a {
+        &:after {
+          content: ""; display:inline-block; vertical-align: 1px; width: 10px; height: 7px; 
+          background: url('../images/down_arr.png') no-repeat center center; margin-left: 12px;
+        }
+      }
     }
   }
 
@@ -316,6 +340,7 @@ p { margin: 0 0 28px 0; padding: 0; }
     text-align: left;
     background: url("../images/overlay_90.png") repeat;
     background: rgba(29, 29, 29, 0.9);
+    background: black;
   }
 
   .overlay-hidden {
@@ -345,11 +370,15 @@ p { margin: 0 0 28px 0; padding: 0; }
   .overlay iframe { border: none; }
   
   
-  .modal-close { display: block; height: 50%; width: 100%; outline: 0; position: absolute; top: 25%; left: 0; z-index: 10000; background: none; background: rgba(0,0,0,0.01); }
+  .modal-close { 
+    display: block; height: 50px; width: 50px; outline: 0; position: absolute; top: 0; right: 0; z-index: 10000; 
+    background: black; color: white !important; display: block;
+    font: 25px/50px Verdana, sans-serif; color: white; text-align: center;
+  }
   
   .overlay-content { height: 100% !important; width: 100% !important;}
   .overlay-popup { 
-    top: 0 !important; left: 0 !important; margin: 0 !important; height: 100% !important; width: 100% !important;
+    top: 5% !important; left: 5% !important; margin: 0 !important; height: 90% !important; width: 90% !important;
   }
   .overlay-popup iframe { height: 100% !important; width: 100% !important; }
 
@@ -378,6 +407,11 @@ p { margin: 0 0 28px 0; padding: 0; }
     .content {
       padding: 20px;
     }
+  }
+  
+  .link-box {
+    .left { float: none; line-height: 1.05; }
+    .right { float: none; }
   }
   
   #bottom {
