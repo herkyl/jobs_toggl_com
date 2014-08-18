@@ -7,6 +7,8 @@ $main-color: #4f4f4f;
 $second-color: #f21c25;
 $third-color: #666666;
 
+$expired-color: #666666;
+
 $font-size: 14px;
 
 $break-medium: 970px;
@@ -165,6 +167,19 @@ p { margin: 0 0 28px 0; padding: 0; }
     }
     &:after { 
       content: " ›"; vertical-align: 1px;
+    }
+
+    &.expired {
+      width: 395px;
+      border: 1px solid $expired-color; color: $expired-color;
+      &:after {
+        content: ""
+      }
+
+      &:hover {
+        background: $expired-color;
+        color: #000;
+      }
     }
     
     &:hover {
