@@ -276,6 +276,7 @@ p {
 
 /* grid */
 .grid {
+  overflow: hidden;
   width: 485px;
   height: 485px;
   float: left;
