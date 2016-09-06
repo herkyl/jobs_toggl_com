@@ -1,0 +1,22 @@
+{
+  "name": "toggl-jobs",
+  "description": "jobs_toggl_com ==============",
+  "main": "gulpfile.js",
+  "authors": [
+    "Toggl.com"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/toggl/jobs_toggl_com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0",
+    "modernizr": "^3.3.1",
+    "normalize-scss": "normalize.scss#^5.0.3"
+  }
+}

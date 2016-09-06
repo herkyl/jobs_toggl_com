@@ -1,5 +1,9 @@
 @charset "utf-8";
-@import '_mixins';
+
+@import "normalize-scss/sass/_normalize.scss";
+@import 'mixins';
+
+@include normalize();
 
 $bg-color: #f0f0f0;
 
@@ -111,8 +115,8 @@ $break-small: 450px;
 
 %nulling { margin: 0; padding: 0; }
 
-html, body { 
-  @extend %nulling; font: 300 #{$font-size}/1.6 'clearsans_light', sans-serif; 
+html, body {
+  @extend %nulling; font: 300 #{$font-size}/1.6 'clearsans_light', sans-serif;
 }
 
 body {
@@ -120,12 +124,12 @@ body {
   background: $bg-color;
   text-align: center;
   min-width: 970px;
-  &.overlay-open { 
+  &.overlay-open {
     position: fixed; width: 100%; height: 100%;
   }
 }
-a { 
-  text-decoration: none; color: $second-color; 
+a {
+  text-decoration: none; color: $second-color;
   &:hover {
     @include color($second-color, 0.8);
   }
@@ -141,8 +145,8 @@ h1, h2, h3 {
   font: 110px/1 'bariol_light', sans-serif;
   color: $second-color;
 }
-h1 { 
-  line-height: 0.84; color: $main-color; 
+h1 {
+  line-height: 0.84; color: $main-color;
   .colored { color: $second-color; }
 }
 h2 {
@@ -162,7 +166,7 @@ p { margin: 0 0 28px 0; padding: 0; }
     font: 13px/1 'clearsans_medium', sans-serif; text-transform: uppercase;
     padding: 20px 0; letter-spacing: 3px;
     transition: background 0.05s ease-in, color 0.05s ease-in;
-    &:after { 
+    &:after {
       content: " ›"; vertical-align: 1px;
     }
 
@@ -178,14 +182,14 @@ p { margin: 0 0 28px 0; padding: 0; }
         color: #000;
       }
     }
-    
+
     &:hover {
       transition: background 0.05s ease-in, color 0.05s ease-in;
       background: $second-color; color: white;
     }
-    
+
     &.btn-video {
-      &:after { 
+      &:after {
         display: none; content: url('../images/arrow_white.png'); background-size: 13px 17px;
         .svg & { content: url('../assets/arrow_white.svg'); }
       }
@@ -205,7 +209,7 @@ p { margin: 0 0 28px 0; padding: 0; }
   }
 
 /* video-container */
-  #video-container { 
+  #video-container {
     position: absolute; top: 0; left: 0; width: 100%; height: 870px; z-index: 1; overflow: hidden;
     background: url('../images/b.jpg') no-repeat center top; background-size: cover;
     video {
@@ -224,7 +228,7 @@ p { margin: 0 0 28px 0; padding: 0; }
   }
 
 /* wrap */
-  
+
   #wrap {
     .overlay-open & {
       position: fixed; left: 0; top: 0; width: 100%;
@@ -238,9 +242,9 @@ p { margin: 0 0 28px 0; padding: 0; }
   #main {
     background: url('../images/map.png') no-repeat center bottom; position: relative; z-index: 100;
   }
-  
-  #logo { 
-    display: block; width: 102px; height: 72px; outline: 0; position: absolute; top: 20px; 
+
+  #logo {
+    display: block; width: 102px; height: 72px; outline: 0; position: absolute; top: 20px;
     background: url('../images/logo.png') no-repeat left center; z-index: 100;
     .svg & {
       background-image: url('../assets/logo.svg');
@@ -248,18 +252,18 @@ p { margin: 0 0 28px 0; padding: 0; }
   }
 
 /* top */
-  .top { 
+  .top {
     position: relative; height: 550px; text-align: center; padding: 130px 0 0;
     font-size: 20px; line-height: 1.5; font-family: 'clearsans_thin', sans-serif;
     h1 { padding-bottom: 40px; }
     p { margin-bottom: 20px; }
-    
-    .btn-video { 
-      margin-top: 24px; 
+
+    .btn-video {
+      margin-top: 24px;
     }
   }
-  
-  
+
+
 /* grid */
   .grid {
     overflow: hidden;
@@ -268,8 +272,8 @@ p { margin: 0 0 28px 0; padding: 0; }
     img { display: block; }
     .inner { display: table; width: 100%; }
     .row { display: table-row; }
-    .content { 
-      display: table-cell; padding: 45px; height: 485px; 
+    .content {
+      display: table-cell; padding: 45px; height: 485px;
       @include box-sizing(border-box); vertical-align: middle;
     }
   }
@@ -279,12 +283,12 @@ p { margin: 0 0 28px 0; padding: 0; }
     padding-top: 30px;
     .inner { background: white; padding: 25px 40px; color: $second-color; }
     .left { float: left; font-size: 30px;   }
-    .right { 
+    .right {
       float: right; letter-spacing: 3px; padding-top: 18px;
       font: 13px/1 'clearsans_medium', sans-serif; text-transform: uppercase;
       a {
         &:after {
-          content: ""; display:inline-block; vertical-align: 1px; width: 10px; height: 7px; 
+          content: ""; display:inline-block; vertical-align: 1px; width: 10px; height: 7px;
           background: url('../images/down_arr.png') no-repeat center center; margin-left: 12px;
         }
       }
@@ -295,49 +299,49 @@ p { margin: 0 0 28px 0; padding: 0; }
   #bottom {
     padding: 120px 0px; text-align: center;
     font-size: 20px; color: $third-color;
-    
+
     h2 { padding-bottom: 5px; margin: 0; font-size: 55px; }
   }
-  
-  .share { 
+
+  .share {
     padding-top: 20px; text-align: center;
-    
-    a { 
-      display: inline-block; width: 40px; height: 50px; outline: 0; margin: 0px 5px 0; 
+
+    a {
+      display: inline-block; width: 40px; height: 50px; outline: 0; margin: 0px 5px 0;
       vertical-align: top;
       position: relative;
       -webkit-transition: top 0.15s ease-in;
       transition: top 0.15s ease-in;
-      
+
       span { display: block; height: 40px; width: 40px; position: relative; top: 10px; background-repeat: no-repeat; background-position: center center;  }
-      
-      &.twitter span { 
-        background-image: url('../images/twitter.png'); 
+
+      &.twitter span {
+        background-image: url('../images/twitter.png');
         background-size: 29px 24px;
         .svg & { background-image: url('../assets/twitter.svg'); }
       }
-      &.facebook span { 
-        background-image: url('../images/facebook.png'); 
+      &.facebook span {
+        background-image: url('../images/facebook.png');
         background-size: 29px 28px;
         .svg & { background-image: url('../assets/facebook.svg'); }
       }
-      &.google span { 
+      &.google span {
         background-image: url('../images/google.png');
         background-size: 29px 28px;
         .svg & { background-image: url('../assets/google.svg'); }
       }
-      &.linkedin span { 
+      &.linkedin span {
         background-image: url('../images/linkedin.png'); background-position: center 4px;
         background-size: 29px 28px;
         .svg & { background-image: url('../assets/linkedin.svg'); }
       }
-      
+
       &:hover span {
         top: 0;
         -webkit-transition: top 0.15s ease-in;
         transition: top 0.15s ease-in;
       };
-    } 
+    }
   }
 /* overlay */
   .overlay {
@@ -379,18 +383,18 @@ p { margin: 0 0 28px 0; padding: 0; }
   .overlay-popup {
     overflow: hidden;
   }
-  
+
   .overlay iframe { border: none; }
-  
-  
-  .modal-close { 
-    display: block; height: 50px; width: 50px; outline: 0; position: absolute; top: 0; right: 0; z-index: 10000; 
+
+
+  .modal-close {
+    display: block; height: 50px; width: 50px; outline: 0; position: absolute; top: 0; right: 0; z-index: 10000;
     background: black; color: white !important; display: block;
     font: 25px/50px Verdana, sans-serif; color: white; text-align: center;
   }
-  
+
   .overlay-content { height: 100% !important; width: 100% !important;}
-  .overlay-popup { 
+  .overlay-popup {
     top: 5% !important; left: 5% !important; margin: 0 !important; height: 90% !important; width: 90% !important;
   }
   .overlay-popup iframe { height: 100% !important; width: 100% !important; }
@@ -398,35 +402,35 @@ p { margin: 0 0 28px 0; padding: 0; }
 
 
 @media screen and (max-width: $break-medium) {
-  
+
   #video-container { height: 560px; }
-  
+
   body { min-width: 320px; }
   #main {}
-  
+
   .wrap { width: auto; }
-  
+
   #logo { left: 20px; top: 0; }
-  
+
   h1 { font-size: 45px; }
-  
+
   .top { padding: 110px 20px 0; font-size: 16px; height: 450px; }
-  
+
   .grid-holder {
     text-align: center;
   }
   .grid {
-    float: none !important; width: 100%; max-width: 485px; margin: 0 auto; 
+    float: none !important; width: 100%; max-width: 485px; margin: 0 auto;
     .content {
       padding: 20px;
     }
   }
-  
+
   .link-box {
     .left { float: none; line-height: 1.05; }
     .right { float: none; }
   }
-  
+
   #bottom {
     font-size: 16px; padding: 100px 20px;
     h2 {
@@ -437,10 +441,10 @@ p { margin: 0 0 28px 0; padding: 0; }
 }
 
 @media screen and (max-width: $break-small) {
-  .grid { 
-    height: auto; 
+  .grid {
+    height: auto;
     .content { height: auto; padding: 40px 20px; }
   }
-  
+
   .btn { width: 100%; }
 }

@@ -1,0 +1,58 @@
+doctype html
+html(class="no-js", lang="en")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="x-ua-compatible", content="ie=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+
+    title Toggl Jobs, Open Positions, Startup Hiring
+    meta(name="description", content="We believe great people will make awesome stuff anywhere - we hire globally, you work locally. Check out available positions in Toggl and apply for your dream job!")
+    meta(name="author", content="toggl.com")
+
+    //- Facebook Meta
+    meta(property="og:site_name", content="Toggl")
+    meta(property="og:title", content="Toggl Jobs")
+    meta(property="og:description", content="We believe great people will make awesome stuff anywhere - we hire globally, you work locally. Check out available positions in Toggl and apply for your dream job!")
+    meta(property="og:type", content="website")
+    meta(property="og:url", content="https://jobs.toggl.com/")
+    meta(property="og:image", content="https://jobs.toggl.com/images/jobs_badge.jpg")
+
+    link(rel="stylesheet", href="css/main.css")
+    script(src="js/modernizr.js")
+
+  body
+    main.wrap
+      include _hero.pug
+
+      //- Other sections
+
+      //- include _share.pug
+
+    script(id="template-video-model", type="text/html")
+      iframe(src="https://www.youtube.com/embed/aXmTj6ksERM?rel=0&autoplay=1", width="750", height="421", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
+
+    script(src="js/vendor.js")
+    script(src="js/main.js")
+
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-3215787-21', 'auto');
+      ga('send', 'pageview');
+
+    script.
+      var clicky_site_ids = clicky_site_ids || [];
+      clicky_site_ids.push(100878795);
+      (function() {
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//static.getclicky.com/js';
+        ( document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0] ).appendChild( s );
+      })();
+
+    noscript
+      img(src="//in.getclicky.com/100878795ns.gif", alt="Clicky" width="0", height="0", style="position:absolute; visibility:hidden")
