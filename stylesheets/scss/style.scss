@@ -588,7 +588,11 @@ p {
 }
 @media screen and (max-width: $break-medium) {
   #video-container {
-    height: 560px;
+    height: 540px;
+    min-width: 960px;
+    margin-left: -480px;
+    left: 50%;
+    padding-bottom: 0;
   }
 
   body {
